@@ -18,7 +18,7 @@ local mess = io.read()
 modem.transmit(tonumber(remote1),  tonumber(local1), mess)
 
 
-until mess == "exit1"
+until mess == "exit"
 
     end
 
