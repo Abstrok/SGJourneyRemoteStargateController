@@ -15,8 +15,15 @@ print(message)
 
 
 local mess = io.read()
-modem.transmit(tonumber(remote1),  tonumber(local1), mess)
 
+
+modem.transmit(tonumber(remote1),  tonumber(local1), mess)
+if mess == "address" then
+repeat
+  event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
+until channel == tonumber(local1) 
+print(message) 
+end
 
 until mess == "exit"
 
