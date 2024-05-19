@@ -10,7 +10,7 @@ local event, side, channel, replyChannel, message, distance
 repeat
   event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
 until channel == tonumber(local1)
-shell.run(message)
+print(message)
 
 
 
