@@ -7,7 +7,7 @@ interface = peripheral.find("basic_interface") or peripheral.find("crystal_inter
 repeat
 modem.open(tonumber(local1))
 
-modem.transmit(tonumber(remote1), tonumber(local1), "Please, select dial, disc or exit1")
+modem.transmit(tonumber(remote1), tonumber(local1), "Please, select dial, disc or exit")
 
 local event, side, channel, replyChannel, message, distance
 repeat
