@@ -6,7 +6,7 @@ if file then
 
     -- Cerrar el archivo
     file:close()
-    print("Se a reescrito el id del modem receptor del DISPOTIVO REMOTO")
+    print("The id of the modem of the destiny dispositive has being succesfully overwrited")
 else
-    print("Error al reescribir el id del modem receptor del DISPOTIVO REMOTO")
+    print("Error to overwrite the Id of the modem of the destiny dispositive")
 end
