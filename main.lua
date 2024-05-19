@@ -7,7 +7,7 @@ interface = peripheral.find("basic_interface") or peripheral.find("crystal_inter
 repeat
 modem.open(tonumber(local1))
 
-modem.transmit(tonumber(remote1), tonumber(local1), "Please, write: dial, disc or exit")
+modem.transmit(tonumber(remote1), tonumber(local1), "Write: dial, disc, address or exit")
 
 local event, side, channel, replyChannel, message, distance
 repeat
@@ -24,6 +24,10 @@ end
 if message == "disc" then
 modem.transmit(tonumber(remote1), tonumber(local1), "Stargate Disconnected")
 interface.disconnectStargate()
+end
+if message == "address" then
+local addresslocal = interface.getLocalAddress()
+modem.transmit(tonumber(remote1), tonumber(local1), interface.addressToString(addresslocal))
 end
 until nil
 end
