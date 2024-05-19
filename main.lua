@@ -7,9 +7,7 @@ interface = peripheral.find("basic_interface") or peripheral.find("crystal_inter
 repeat
 modem.open(tonumber(local1))
 
-modem.transmit(tonumber(remote1), tonumber(local1), "Please, select a option")
-modem.transmit(tonumber(remote1), tonumber(local1), "1: Dial")
-modem.transmit(tonumber(remote1), tonumber(local1), "2: Disconnect Stargate")
+modem.transmit(tonumber(remote1), tonumber(local1), "Please, select dial, disc or exit1")
 
 local event, side, channel, replyChannel, message, distance
 repeat
@@ -20,10 +18,10 @@ if message == "restart" then
 shell.run("disk/main")
 end
 
-if tonumber(message) == 1 then
+if message == "dial" then
 shell.run("disk/dial")
 end
-if tonumber(message) == 2 then
+if message == "disc" then
 modem.transmit(tonumber(remote1), tonumber(local1), "Stargate Disconnected")
 interface.disconnectStargate()
 end
