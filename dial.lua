@@ -41,7 +41,7 @@ local modem = peripheral.find("modem") or error("No modem attached", 0)
 repeat 
 modem.open(tonumber(local1))
 
-modem.transmit(tonumber(remote1), tonumber(local1), "Please, send the address")
+modem.transmit(tonumber(remote1), tonumber(local1), "Write the address or -0 to leave:")
 
 local event, side, channel, replyChannel, message, distance
 repeat
