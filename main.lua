@@ -1,7 +1,7 @@
 local modem = peripheral.find("modem") or error("No modem attached", 0)
 local localmoden = io.open("modemlocal.data", "r")
 local remotemodem = io.open("modemremoto.data", "r")
-interface = peripheral.find("basic_interface") or peripheral.find("crystal_interface") or peripheral.find("advanced_crystal_interface")
+local interface = peripheral.find("basic_interface") or peripheral.find("crystal_interface") or peripheral.find("advanced_crystal_interface")
  for local1 in localmoden:lines() do
 	    for remote1 in remotemodem:lines() do
 repeat
