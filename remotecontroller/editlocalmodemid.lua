@@ -1,5 +1,5 @@
 local file = io.open("modemlocal.data", "w")
-
+print("Write the new Local Modem ID:")
 if file then
     -- Escribir los nuevos datos en el archivo
     file:write(io.read())
