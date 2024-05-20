@@ -1,5 +1,5 @@
 local file = io.open("modemremoto.data", "w")
-
+print("Write the new Destiny Modem ID:")
 if file then
     -- Escribir los nuevos datos en el archivo
     file:write(io.read())
