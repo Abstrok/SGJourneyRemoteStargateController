@@ -1,12 +1,12 @@
 local file = io.open("modemlocal.data", "w")
-
+print("Write the new Local Modem ID:")
 if file then
     -- Escribir los nuevos datos en el archivo
     file:write(io.read())
 
     -- Cerrar el archivo
     file:close()
-    print("Se a reescrito el id del modem receptor de este dispositivo")
+    print("The id of the modem of this dispositive has being succesfully overwrited")
 else
-    print("Error al reescribir el id del modem receptor de este dispostivo")
+    print("Error to overwrite the Id of the modem of this dispositive")
 end
