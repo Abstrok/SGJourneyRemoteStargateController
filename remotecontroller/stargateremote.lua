@@ -1,9 +1,9 @@
 local modem = peripheral.find("modem") or error("No modem attached", 0)
+print("Write help for more info.")
+local event, side, channel, replyChannel, message, distance
+repeat
 local localmoden = io.open("modemlocal.data", "r")
 local remotemodem = io.open("modemremoto.data", "r")
-print("Write help for more info.")
-repeat
-
 
 local mess1 = io.read()
 if mess1 == "help" then
@@ -40,10 +40,20 @@ if mess1 == "start" then
 	modem.open( tonumber(local1))
 modem.transmit(tonumber(remote1),tonumber(local1), "restart")
 repeat
-local event, side, channel, replyChannel, message, distance
 repeat
-  event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
+local timerId = os.startTimer(1)
+  event, side, channel, replyChannel, message, distance = os.pullEvent()
+  if event == "timer" then
+  print("")
+  print("Remote Dialer not found")
+  print("")
+    break
+  end
+  
 until channel == tonumber(local1)
+  if event == "timer" then
+    break
+  end
 print("")
 print(message)
 
@@ -63,11 +73,20 @@ print("")
 end
 
 until mess == "exit"
+  if event == "timer" then
+    mess1 = "exit"
+  end
+    if event ~= "timer" then
 print("")
 print("Write again \"exit\" to close the program")
+  end
+
     end
 
     end
  end
-
  until mess1 == "exit"
+ if event == "timer" then
+shell.run("stargateremote.lua")
+  end
+
