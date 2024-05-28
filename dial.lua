@@ -11,7 +11,7 @@ function dial(address)
     for chevron = start,addressLength,1
     do
         local symbol = address[chevron]
-		 if interface.getStargateType() == "sgjourney:pegasus_stargate" then
+		 if interface.getStargateType() == "sgjourney:pegasus_stargate" or interface.getStargateType() == "sgjourney:classic_stargate" then
 		interface.engageSymbol(symbol)
 		end
         if interface.getStargateType() == "sgjourney:milky_way_stargate" then
